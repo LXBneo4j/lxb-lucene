@@ -1,5 +1,12 @@
 package com.lxb.lucene.IKAnalyzer;
 
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
+import org.wltea.analyzer.lucene.IKAnalyzer;
+
+import java.io.StringReader;
+
 /**
  * author: lxb.
  * idea-user: Administrator.
@@ -11,7 +18,7 @@ public class IKAnalyzerTest {
         //创建IKAnalyzer中文分词对象
         IKAnalyzer analyzer = new IKAnalyzer();
         // 使用智能分词
-        analyzer.setUseSmart(true);
+        analyzer.setMaxWordLength(true);
         // 打印分词结果
         try {
             printAnalysisResult(analyzer, keyWord);
